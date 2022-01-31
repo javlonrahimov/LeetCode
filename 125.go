@@ -2,34 +2,24 @@ package main
 
 import(
 	"strings"
-	"fmt"
 )
 
 func main() {
 
-	fmt.Println(isPalendrome("A man, a plan, a canal: Panama"))
-
 }
 
-func isPalindrome(s string) bool {
+func IsPalindrome(s string) bool {
 
 	s = strip_string(s)
 	s = strings.ReplaceAll(s, " ", "")
-	s = strings.ToLower(s)
+	processedString := strings.ToLower(s)
 
-	fmt.Println(s)
-
-	reversedStr := ""
-    for i := len(s)-1; i >= 0; i-- {
-        reversedStr += string(s[i])
-    }
-    for i := range(s) {
-        if s[i] != reversedStr[i] {
+	for i:=0; i<len(processedString)/2; i++ {
+        if processedString[i] != processedString[len(processedString)-1-i]{
             return false
         }
     }
     return true
-
 }
 
 
