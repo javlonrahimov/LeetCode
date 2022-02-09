@@ -2,7 +2,7 @@ package main
 
 func AddDigits(num int) int {
 	seen := make(map[int]bool)
-	for  {
+	for {
 		if _, ok := seen[num]; !ok {
 			seen[num] = true
 			num = digitSum(num)

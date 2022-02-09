@@ -8,8 +8,8 @@ import (
 func Test258(t *testing.T) {
 	cases := []struct {
 		Input int
-		Want int
-	} {
+		Want  int
+	}{
 		{Input: 38, Want: 2},
 		{Input: 0, Want: 0},
 	}
@@ -24,4 +24,3 @@ func Test258(t *testing.T) {
 		})
 	}
 }
-
