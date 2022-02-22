@@ -18,7 +18,7 @@ func removeKDigits(num string, k int) string {
 		}
 		zeros++
 	}
-    if len(stack) == 0 || zeros == len(stack) {
+	if len(stack) == 0 || zeros == len(stack) {
 		return "0"
 	}
 	return string(stack[zeros:])
