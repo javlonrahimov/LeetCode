@@ -11,7 +11,7 @@ func TitleToNumber(columnTitle string) int {
 		'X': 24, 'Y': 25, 'Z': 26}
 	res := 0
 	for index, value := range columnTitle {
-		res += int(float64(letters[value]) * math.Pow(26, float64(len(columnTitle) - (index + 1))))
+		res += int(float64(letters[value]) * math.Pow(26, float64(len(columnTitle)-(index+1))))
 	}
 
 	return res
