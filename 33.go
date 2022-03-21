@@ -1,10 +1,10 @@
 package main
 
 func search(nums []int, target int) int {
-    for index, value := range nums {
-        if value == target {
-            return index
-        }
-    }
-    return -1
+	for index, value := range nums {
+		if value == target {
+			return index
+		}
+	}
+	return -1
 }
