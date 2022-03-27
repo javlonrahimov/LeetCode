@@ -8,8 +8,8 @@ func maxArea(height []int) int {
 	}
 
 	var max float64 = -1
-	i, j := 0, len(height) - 1
-	
+	i, j := 0, len(height)-1
+
 	for i <= j {
 		if height[i] < height[j] {
 			max = math.Max(max, float64(height[i]*(j-i)))

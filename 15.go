@@ -3,7 +3,7 @@ package main
 import "sort"
 
 func threeSum(nums []int) [][]int {
-  res := [][]int{}
+	res := [][]int{}
 	n := len(nums)
 	if n < 3 {
 		return res
@@ -13,7 +13,7 @@ func threeSum(nums []int) [][]int {
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
-		l, r := i + 1, n - 1
+		l, r := i+1, n-1
 		for l < r {
 			sum := nums[l] + nums[r] + nums[i]
 			if sum == 0 {

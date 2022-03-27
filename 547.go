@@ -6,7 +6,7 @@ func findCircleNum(M [][]int) int {
 		friends[i] = i
 	}
 	for i := 0; i < len(M); i++ {
-		for j := i+1; j < len(M); j++ {
+		for j := i + 1; j < len(M); j++ {
 			if M[i][j] == 1 {
 				union(i, j, friends)
 			}
