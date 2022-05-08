@@ -16,7 +16,7 @@ func LadderLength(beginWord, endWord string, wordList []string) int {
 		}
 	}
 
-	queue := []node{node{word: beginWord, state: 1}}
+	queue := []node{{word: beginWord, state: 1}}
 	set := make(map[string]struct{})
 	set[beginWord] = struct{}{}
 	for len(queue) != 0 {
