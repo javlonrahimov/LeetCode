@@ -1,25 +1,33 @@
 package main
 
-import (
-	"reflect"
-	"testing"
-)
+import "sort"
 
-func Test39(t *testing.T) {
-	cases := []struct {
-		Name   string
-		Input  []int
-		Target int
-		Want   [][]int
-	}{}
+func CombinationSum(candidates []int, target int) [][]int {
 
-	for _, test := range cases {
-		t.Run(test.Name, func(t *testing.T) {
-			got := CombinationSum(test.Input, test.Target)
+	result := [][]int{}
+	sub := []int{}
+	sort.Ints(candidates)
+	helper39(candidates, target, &result, sub)
 
-			if !reflect.DeepEqual(got, test.Want) {
-				t.Errorf("want %v, got %v", test.Want, got)
-			}
-		})
+	return result
+}
+
+func helper39(candidates []int, target int, result *[][]int, sub []int) {
+
+	if len(candidates) == 0 {
+		return
+	}
+	if candidates[0] == target {
+		sub = append(sub, candidates[0])
+		*result = append(*result, sub)
+		return
+	} else if candidates[0] < target {
+		helper39(candidates[1:], target, result, sub)
+		sub2 := make([]int, len(sub))
+		copy(sub2, sub)
+		sub2 = append(sub2, candidates[0])
+		helper39(candidates, target-candidates[0], result, sub2)
+	} else {
+		return
 	}
 }
