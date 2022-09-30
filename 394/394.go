@@ -3,7 +3,7 @@ package main
 import "strconv"
 
 func decodeString(s string) string {
-    stack, result := []string{}, ""
+	stack, result := []string{}, ""
 	for _, str := range s {
 		if len(stack) == 0 || (len(stack) > 0 && str != ']') {
 			stack = append(stack, string(str))
